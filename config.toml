@@ -1,0 +1,23 @@
+baseURL = "https://www.monellz.xyz/"
+languageCode = "zh-cn"
+title = "zrx的外置记忆模块"
+theme = "minos"
+pagination = 10
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+
+[menu]
+    [[menu.main]]
+        name = "标签"
+        url = "/tags/"
+    [[menu.main]]
+        name = "分类"
+        url = "/categories/"
+
+[params]
+    smartToc = true
+    katex = true
+    DateForm = "2006-01-06"
