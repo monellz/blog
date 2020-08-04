@@ -21,8 +21,11 @@ hikey970开发板参数如下
 由于架构为armv8，github上有个很好的用作参考的库,[enable_arm_pmu](https://github.com/rdolbeau/enable_arm_pmu)
 
 * 解决编译问题
+
     enable_arm_pmu需要先往内核插入一个模块，因此需要相应架构头文件等进行模块的编译
+
     板子上的```uname -r```会有奇怪的版本号出现，无法通过包管理器等进行头文件等的安装以及库里Makefile的使用
+
     因此直接利用源码(下面被放在了```linux-headers-hikey970-v4.9.zip```里)，在对应位置手动进行目录的构建
     ```bash
     #!/bin/bash
