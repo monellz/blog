@@ -35,7 +35,7 @@ jobs:
        - name: cleanup files of public site
          working-directory: ./public
          shell: bash
-         run: ls | xargs rm -rf
+         run: ls | grep -v CNAME | xargs rm -rf
 
        - name: build content
          working-directory: ./
