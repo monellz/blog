@@ -1,0 +1,43 @@
+name: Auto Publish to Github Page
+
+on:
+  push:
+    branches: 
+    - master
+
+jobs:
+  hugo-publish:
+     name: publish content
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
+
+       - name: clone public site repo
+         uses: actions/checkout@v2
+         with:
+          repository: monellz/monellz.github.io
+          path: public
+
+       - name: setup hugo
+         uses: peaceiris/actions-hugo@v2
+         with:
+           hugo-version: latest
+           extended: true
+
+       - name: cleanup files of public site
+         working-directory: ./public
+         shell: bash
+         run: find . -type f -name '*.min.*' -exec rm -f {} \;
+
+       - name: build content
+         working-directory: ./
+         run: hugo --minify --gc
+
+       - name: commit and deploy
+         working-directory: ./public
+         run: |
+           git config --local user.email "rxzhong@outlook.com"
+           git config --local user.name "GitHub Action"
+           git add . -A
+           git commit -m "Auto publish"
+           git push origin
