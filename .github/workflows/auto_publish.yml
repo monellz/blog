@@ -28,7 +28,7 @@ jobs:
        - name: cleanup files of public site
          working-directory: ./public
          shell: bash
-         run: find . -type f -name '*.min.*' -exec rm -f {} \;
+         run: ls | xargs rm -rf
 
        - name: build content
          working-directory: ./
@@ -39,7 +39,6 @@ jobs:
          run: |
            git config --local user.email "rxzhong@outlook.com"
            git config --local user.name "GitHub Action"
-           ls | xargs rm -rf
            git add . -A
            git commit -m "Auto publish"
            git push origin
