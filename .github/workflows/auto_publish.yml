@@ -39,6 +39,7 @@ jobs:
          run: |
            git config --local user.email "rxzhong@outlook.com"
            git config --local user.name "GitHub Action"
+           ls | xargs rm -rf
            git add . -A
            git commit -m "Auto publish"
            git push origin
