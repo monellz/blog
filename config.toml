@@ -3,7 +3,7 @@ languageCode = "zh-cn"
 title = "zrx的外置记忆模块"
 theme = "minos"
 pagination = 10
-summaryLength = 20 # default 70
+summaryLength = 15 # default 70
 
 [taxonomies]
     tag = "tags"
