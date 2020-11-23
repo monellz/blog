@@ -121,3 +121,32 @@ dace自己有一套typeclass来增强python原有的type系统（在```dace/dtyp
 
 至此DaceProgram初始化完毕
 
+### 例子
+
+最后用一个简单的例子来看下具体DaceProgram一些内部变量
+
+```python
+N = dace.symbol('N')
+@dace.program
+def sum(A: dace.float32[N], out: dace.float32[1]):
+    dace.reduce(lambda a, b: a + b, A, out, identity=0)
+    
+type(sum)
+'''
+<class 'dace.frontend.python.parser.DaceProgram'>
+'''
+
+sum.args
+'''
+()
+''' # 为空是因为装饰器没指定参数
+
+sum.global_vars
+'''
+sum.global_vars
+{'__name__': '__main__', '__builtins__': <module 'builtins' (built-in)>, 'dace': <module 'dace' from '/home/zhongrunxin/spack/opt/spack/linux-ubuntu16.04-haswell/gcc-7.3.0/python-3.8.6-pjue5cqk6ficyr6bb35bqrccldl256ps/lib/python3.8/site-packages/dace/__init__.py'>, 'N': N}
+'''
+```
+
+
+
