@@ -4,6 +4,7 @@ title = "zrx的外置记忆模块"
 theme = "minos"
 pagination = 10
 summaryLength = 15 # default 70
+googleAnalytics = "G-VGRP022QG8"
 
 [taxonomies]
     tag = "tags"
