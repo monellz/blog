@@ -2,7 +2,7 @@
 title: "获取当前时间的性能坑"
 date: 2020-11-27T15:01:42+08:00
 draft: false
-tag: ["linux", "performance", "fine tune"]
+tags: ["linux", "performance", "fine tune"]
 categories: ["performance"]
 ---
 
