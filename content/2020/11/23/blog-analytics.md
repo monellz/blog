@@ -2,7 +2,7 @@
 title: "hugo博客中添加google analytics"
 date: 2020-11-23T15:23:45+08:00
 draft: false
-categories: ["Blog"]
+categories: ["blog"]
 tags: ["web", "blog"]
 ---
 
